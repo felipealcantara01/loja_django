@@ -17,8 +17,8 @@ O projeto consiste em:
 ## Configuração do Ambiente
 1. Clone o repositório
     ```bash
-    git clone https://github.com/KateMorf/backend-django.git
-    cd backend-django
+    git clone https://github.com/felipealcantara01/loja_django.git
+    cd loja_django
     ```
 
 2. Crie e ative um ambiente virtual
@@ -64,12 +64,20 @@ Acesse o projeto em: http://127.0.0.1:8000/
 - **Remoção de Produtos**: Exclua produtos do catálogo
 
 ## Rotas
+- `/admin/`: Interface de administração
 - `/`: Lista todos os produtos
 - `/novo/`: Formulário para criar um novo produto
 - `/edita/<id>/`: Formulário para editar um produto existente
 - `/remove/<id>/`: Confirma a remoção de um produto
-- `/admin/`: Interface de administração
-
+- `/clientes/`: Lista todos os clientes
+- `/clientes/novo/`: Formulário para criar um novo cliente
+- `/clientes/editar/<id>/`: Formulário para editar um cliente existente
+- `/clientes/excluir/<id>/`: Confirma a remoção de um cliente
+- `/vendas/`: Lista todas as vendas
+- `/vendas/novo/`: Formulário para criar uma nova venda
+- `/vendas/editar/<id>/`: Formulário para editar uma venda existente
+- `/vendas/excluir/<id>/`: Confirma a remoção de uma venda
+    
 ## Estrutura de Arquivos
 O projeto segue a estrutura padrão do Django:
 
