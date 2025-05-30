@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Vendas</title>
+</head>
+<body>
+    <h1>Lista de Vendas</h1>
+
+    <a href="{% url 'criar_venda' %}">Adicionar Venda</a>
+
+    <table border="1">
+        <tr>
+            <th>Cliente</th>
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Data da Venda</th>
+            <th>Valor Total</th>
+            <th>Ações</th>
+        </tr>
+        {% for venda in vendas %}
+        <tr>
+            <td>{{ venda.cliente.nome }}</td>
+            <td>{{ venda.produto.nome }}</td>
+            <td>{{ venda.quantidade }}</td>
+            <td>{{ venda.data_venda }}</td>
+            <td>R$ {{ venda.valor_total|floatformat:2 }}</td>
+            <td>
+                <a href="{% url 'editar_venda' venda.id %}">Editar</a> |
+                <a href="{% url 'excluir_venda' venda.id %}">Excluir</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="6">Nenhuma venda cadastrada.</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
